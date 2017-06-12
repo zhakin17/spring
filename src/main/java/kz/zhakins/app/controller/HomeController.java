@@ -8,17 +8,19 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
+/*
  * Created by User on 11.06.2017.
- */
+*/
+
 @Controller
 public class HomeController {
 
-    /*@RequestMapping(value = "/list")
+    @RequestMapping(value = "/")
     public  String home(){
         return  "home";
-    }*/
-    @RequestMapping(value="/qwer", method = RequestMethod.GET)
+    }
+
+    @RequestMapping(value="/qwe", method = RequestMethod.GET)
     public ModelAndView list(){
         ModelAndView model = new ModelAndView("customer/list");
         //List<Customer> list = customerServiceImpl.listAllCustomers();

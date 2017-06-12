@@ -26,8 +26,9 @@ public class CustomerController {
 
 	@RequestMapping(value="/", method = RequestMethod.GET)
 	public ModelAndView list(){
-		//ModelAndView model = new ModelAndView("customer/list2");
+		//ModelAndView model = new ModelAndView("/list");
 		ModelAndView model = new ModelAndView("/customer/list");
+		//ModelAndView model = new ModelAndView();
 		List<Customer> list = customerDao.listAllCustomers("");
 		/*List<String> list = new ArrayList<String>();
 		list.add("1");
@@ -41,7 +42,8 @@ public class CustomerController {
 	}
 	@RequestMapping(value="/add", method = RequestMethod.GET)
 	public ModelAndView add(){
-		ModelAndView model = new ModelAndView("/home");
+		ModelAndView model = new ModelAndView("/customer/form");
+		//model.setView("customer/form");
 		Customer customer = new Customer("Samat","Zhakin","male","Korday 2 123");
 		customerDao.saveOrUpdate(customer);
 		//model.addObject("customerForm", customer);

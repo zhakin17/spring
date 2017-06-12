@@ -29,6 +29,7 @@ public class DatabaseConfig {
         return getDataSource("127.0.0.1","root","123456");
     }
 
+
     private   HikariDataSource getDataSource(String serverName, String user, String password){
         HikariDataSource dataSource = new HikariDataSource();
         dataSource.setDataSourceClassName("com.mysql.jdbc.jdbc2.optional.MysqlDataSource");
@@ -36,7 +37,7 @@ public class DatabaseConfig {
         dataSource.addDataSourceProperty("portNumber","3306");
         dataSource.addDataSourceProperty("serverName","localhost");
         dataSource.addDataSourceProperty("user","root");
-        dataSource.addDataSourceProperty("password","password");
+        dataSource.addDataSourceProperty("password","");
         return  dataSource;
     }
     @Bean

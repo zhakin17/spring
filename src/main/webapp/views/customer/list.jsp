@@ -21,7 +21,7 @@
 	</tr>
 	<c:forEach items="${list }" var="customer">
 		<tr>
-			<!-- <td>${customer.id}</td> -->
+			<td>${customer.id}</td>
 
 			<td>${customer.firstname}</td>
 			<td>${customer.lastname}</td>
