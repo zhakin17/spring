@@ -47,6 +47,7 @@ public class DatabaseConfig {
         return manager;
 
     }
+
     @Bean
     public LocalSessionFactoryBean hibernate5SessionFactoryBean(){
         LocalSessionFactoryBean localSessionFactoryBean = new LocalSessionFactoryBean();
