@@ -24,7 +24,7 @@ public class CustomerController {
 	private CustomerDaoImpl customerDao;
 
 
-	@RequestMapping(value="/", method = RequestMethod.GET)
+	@RequestMapping(value="/list", method = RequestMethod.GET)
 	public ModelAndView list(){
 		//ModelAndView model = new ModelAndView("/list");
 		ModelAndView model = new ModelAndView("/customer/list");
@@ -44,9 +44,10 @@ public class CustomerController {
 	public ModelAndView add(){
 		ModelAndView model = new ModelAndView("/customer/form");
 		//model.setView("customer/form");
-		Customer customer = new Customer("Samat","Zhakin","male","Korday 2 123");
-		customerDao.saveOrUpdate(customer);
-		//model.addObject("customerForm", customer);
+		//Customer customer = new Customer("Samat","Zhakin","male","Korday 2 123");
+		Customer customer = new Customer();
+        //customerDao.saveOrUpdate(customer);
+		model.addObject("customerForm", customer);
 		//return model;
 		return model;
 	}

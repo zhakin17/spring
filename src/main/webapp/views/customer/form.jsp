@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"    pageEncoding="ISO-8859-1"%>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"  %>
-    <%@ taglib prefix="p" uri="http://www.springframework.org/tags"  %>
+    <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"  %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,13 +8,13 @@
 <title>Form</title>
 </head>
 <body>
-<p:url value="/customer/save" var="saveURL"></p:url>
-<form action="${saveURL }" method="POST" modelAttribute="customer/form">
+<spring:url value="/customer/save" var="saveURL"/>
+<form:form action="${saveURL }" method="POST" modelAttribute="customerForm">
 	<form:hidden path="id"/>
 	<table>
 		<tr>
 			<td>Firstname</td>
-			<td><form:input path="firsname"/> </td>
+			<td><form:input path="firstname"/> </td>
 		</tr>
 		<tr>
 			<td>Lastname</td>
@@ -38,6 +38,6 @@
 	</table>
 
 
-</form>
+</form:form>
 </body>
 </html>

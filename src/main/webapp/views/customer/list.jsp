@@ -12,7 +12,7 @@
 <a href="${addURL }">Add new Customer</a>
 <table width="100%" border="1">
 	<tr>
-		<td>ID</td>
+		<%--<td>ID</td>--%>
 		<td>Firstname</td>
 		<td>Lastname</td>
 		<td>Gender</td>
@@ -21,7 +21,7 @@
 	</tr>
 	<c:forEach items="${list }" var="customer">
 		<tr>
-			<td>${customer.id}</td>
+			<%--<td>${customer.id}</td>--%>
 
 			<td>${customer.firstname}</td>
 			<td>${customer.lastname}</td>
