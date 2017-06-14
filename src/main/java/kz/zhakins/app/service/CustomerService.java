@@ -19,30 +19,18 @@ public class CustomerService {
 
 	@SuppressWarnings("unchecked")
 	public List<Customer> listAllCustomers(String name) {
-
-
 		Session session = sessionFactory.getCurrentSession();
-
-		// Create a Hibernate query (HQL)
 		Query query = session.createQuery("FROM Customer Where firstname like :NM");
 		query.setString("NM", "%" + name + "%");
-
-		// Retrieve all
 		return  query.list();
 	}
 
-
-
-
 	public void saveOrUpdate(Customer customer) {
-		//getSession().saveOrUpdate(customer);
 		sessionFactory.getCurrentSession().saveOrUpdate(customer);
 	}
 
-
 	public Customer findCustomerById(int id) {
 		Customer customer = sessionFactory.getCurrentSession().get(Customer.class, id);
-		
 		return customer;
 	}
 

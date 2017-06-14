@@ -38,8 +38,8 @@ public class DatabaseConfig {
         dataSource.addDataSourceProperty("portNumber","3306");
         dataSource.addDataSourceProperty("serverName","localhost");
         dataSource.addDataSourceProperty("user","root");
-       // dataSource.addDataSourceProperty("password","password");
-        dataSource.addDataSourceProperty("password","");
+        dataSource.addDataSourceProperty("password","password");
+        //dataSource.addDataSourceProperty("password","");
         return  dataSource;
     }
     @Bean

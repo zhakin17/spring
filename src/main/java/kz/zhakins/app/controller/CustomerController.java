@@ -28,11 +28,7 @@ public class CustomerController {
 		List<Customer> list = customerService.listAllCustomers("");
 		/*List<String> list = new ArrayList<String>();
 		list.add("1");
-		list.add("2");
-		list.add("3");
-		list.add("3");
-		list.add("3");
-		list.add("3");*/
+		*/
 		model.addObject("list", list);
 		return model;
 	}
