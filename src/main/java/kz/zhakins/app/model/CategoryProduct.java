@@ -13,6 +13,13 @@ public class CategoryProduct {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    public CategoryProduct() {
+    }
+
+    public CategoryProduct(String name) {
+        this.name = name;
+    }
+
     @Column(name = "name")
     private  String name;
 

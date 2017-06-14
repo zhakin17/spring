@@ -2,6 +2,7 @@ package kz.zhakins.app.config;
 
 
 import  com.zaxxer.hikari.HikariDataSource;
+import kz.zhakins.app.model.CategoryProduct;
 import kz.zhakins.app.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -53,7 +54,9 @@ public class DatabaseConfig {
     public LocalSessionFactoryBean hibernate5SessionFactoryBean(){
         LocalSessionFactoryBean localSessionFactoryBean = new LocalSessionFactoryBean();
         localSessionFactoryBean.setDataSource((DataSource) appContext.getBean("DataSource"));
-        localSessionFactoryBean.setAnnotatedClasses(Customer.class);
+        localSessionFactoryBean.setAnnotatedClasses(
+                Customer.class,
+                CategoryProduct.class);
 
         Properties properties = new Properties();
         properties.put("hibernate.dialect","org.hibernate.dialect.MySQLDialect");
