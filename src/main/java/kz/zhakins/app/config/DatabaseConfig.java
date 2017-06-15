@@ -5,6 +5,7 @@ import  com.zaxxer.hikari.HikariDataSource;
 import kz.zhakins.app.model.CategoryCredit;
 import kz.zhakins.app.model.CategoryProduct;
 import kz.zhakins.app.model.Customer;
+import kz.zhakins.app.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -60,7 +61,8 @@ public class DatabaseConfig {
         localSessionFactoryBean.setAnnotatedClasses(
                 Customer.class,
                 CategoryProduct.class,
-                CategoryCredit.class
+                CategoryCredit.class,
+                Product.class
         );
 
         Properties properties = new Properties();
