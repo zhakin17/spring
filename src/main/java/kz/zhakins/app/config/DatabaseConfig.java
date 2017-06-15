@@ -2,6 +2,7 @@ package kz.zhakins.app.config;
 
 
 import  com.zaxxer.hikari.HikariDataSource;
+import kz.zhakins.app.model.CategoryCredit;
 import kz.zhakins.app.model.CategoryProduct;
 import kz.zhakins.app.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,8 +39,8 @@ public class DatabaseConfig {
         dataSource.addDataSourceProperty("portNumber","3306");
         dataSource.addDataSourceProperty("serverName","localhost");
         dataSource.addDataSourceProperty("user","root");
-        dataSource.addDataSourceProperty("password","password");
-        //dataSource.addDataSourceProperty("password","");
+        //dataSource.addDataSourceProperty("password","password");
+        dataSource.addDataSourceProperty("password","");
         return  dataSource;
     }
     @Bean
@@ -56,7 +57,8 @@ public class DatabaseConfig {
         localSessionFactoryBean.setDataSource((DataSource) appContext.getBean("DataSource"));
         localSessionFactoryBean.setAnnotatedClasses(
                 Customer.class,
-                CategoryProduct.class);
+                CategoryProduct.class,
+                CategoryCredit.class);
 
         Properties properties = new Properties();
         properties.put("hibernate.dialect","org.hibernate.dialect.MySQLDialect");
