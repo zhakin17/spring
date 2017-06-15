@@ -16,6 +16,17 @@ public class CategoryCredit {
     @Column(name = "name")
     private  String name;
 
+    @Column(name = "price")
+    private  String price;
+
+    public CategoryCredit() {
+    }
+
+    public CategoryCredit(String name, String price) {
+        this.name = name;
+        this.price = price;
+    }
+
     public int getId() {
         return id;
     }
@@ -40,6 +51,5 @@ public class CategoryCredit {
         this.price = price;
     }
 
-    @Column(name = "price")
-    private  String price;
+
 }

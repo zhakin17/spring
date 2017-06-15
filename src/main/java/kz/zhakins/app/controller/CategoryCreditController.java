@@ -24,9 +24,9 @@ public class CategoryCreditController {
     @RequestMapping(value="/list", method = RequestMethod.GET)
     public ModelAndView list(){
 
-        ModelAndView model = new ModelAndView("/categoryProduct/list");
+        ModelAndView model = new ModelAndView("/categoryCredit/list");
 
-        List<CategoryCredit> list = categoryCreditService.listAllCustomers("");
+        List<CategoryCredit> list = categoryCreditService.listAllCategoryCredits("");
 
         model.addObject("list", list);
         return model;
@@ -37,9 +37,9 @@ public class CategoryCreditController {
         ModelAndView model = new ModelAndView("/categoryCredit/form");
         //model.setView("customer/form");
         //Customer customer = new Customer("Samat","Zhakin","male","Korday 2 123");
-        CategoryCredit categoryProduct = new CategoryCredit();
+        CategoryCredit categoryCredit = new CategoryCredit();
         //customerDao.saveOrUpdate(customer);
-        model.addObject("categoryCreditForm", categoryProduct);
+        model.addObject("categoryCreditForm", categoryCredit);
         //return model;
         return model;
     }
@@ -47,9 +47,9 @@ public class CategoryCreditController {
     @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
     public ModelAndView update(@PathVariable("id") int id) {
         ModelAndView model = new ModelAndView("categoryCredit/form");
-        CategoryCredit categoryProduct = categoryCreditService.findCustomerById(id);
+        CategoryCredit categoryCredit = categoryCreditService.findCustomerById(id);
 
-        model.addObject("categoryCreditForm", categoryProduct);
+        model.addObject("categoryCreditForm", categoryCredit);
         return model;
     }
 
@@ -64,10 +64,10 @@ public class CategoryCreditController {
 
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public ModelAndView save(@ModelAttribute("categoryCredit/form") CategoryCredit categoryProduct) {
+    public ModelAndView save(@ModelAttribute("categoryCredit/form") CategoryCredit categoryCredit) {
         ModelAndView model = new ModelAndView("categoryCredit/form");
 
-        categoryCreditService.saveOrUpdate(categoryProduct);
+        categoryCreditService.saveOrUpdate(categoryCredit);
 
         return new ModelAndView("redirect:/categoryCredit/list");
 

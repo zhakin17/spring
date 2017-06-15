@@ -36,7 +36,7 @@ public class CustomerController {
 	public ModelAndView add(){
 		ModelAndView model = new ModelAndView("/customer/form");
 		//model.setView("customer/form");
-		//Customer customer = new Customer("Samat","Zhakin","male","Korday 2 123");
+		//Customer customer = new Customer("Самат","Жакин","male","Korday 2 123");
 		Customer customer = new Customer();
         //customerDao.saveOrUpdate(customer);
 		model.addObject("customerForm", customer);

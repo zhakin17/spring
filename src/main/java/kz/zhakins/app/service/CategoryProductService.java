@@ -1,7 +1,7 @@
 package kz.zhakins.app.service;
 
 import kz.zhakins.app.model.CategoryProduct;
-import kz.zhakins.app.model.Customer;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

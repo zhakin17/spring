@@ -39,8 +39,10 @@ public class DatabaseConfig {
         dataSource.addDataSourceProperty("portNumber","3306");
         dataSource.addDataSourceProperty("serverName","localhost");
         dataSource.addDataSourceProperty("user","root");
-        //dataSource.addDataSourceProperty("password","password");
-        dataSource.addDataSourceProperty("password","");
+        dataSource.addDataSourceProperty("password","password");
+        dataSource.addDataSourceProperty("characterEncoding","utf8");
+        dataSource.addDataSourceProperty("useUnicode","true");
+        //dataSource.addDataSourceProperty("password","");
         return  dataSource;
     }
     @Bean
@@ -58,12 +60,16 @@ public class DatabaseConfig {
         localSessionFactoryBean.setAnnotatedClasses(
                 Customer.class,
                 CategoryProduct.class,
-                CategoryCredit.class);
+                CategoryCredit.class
+        );
 
         Properties properties = new Properties();
         properties.put("hibernate.dialect","org.hibernate.dialect.MySQLDialect");
         properties.put("hibernate.hbm2ddl.auto","update");
         properties.put("hibernate.show_sql","true");
+        //properties.put("hibernate.connection.useUnicode","true");
+        //properties.put("hibernate.connection.characterEncoding","utf8");
+        //properties.put("hibernate.connection.charSet","utf8");
 
         localSessionFactoryBean.setHibernateProperties(properties);
         return  localSessionFactoryBean;

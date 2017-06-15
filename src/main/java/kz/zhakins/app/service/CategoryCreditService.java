@@ -7,7 +7,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
@@ -20,7 +20,8 @@ public class CategoryCreditService {
     private SessionFactory sessionFactory;
 
     @SuppressWarnings("unchecked")
-    public List<CategoryCredit> listAllCustomers(String name) {
+
+    public List<CategoryCredit> listAllCategoryCredits(String name) {
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("FROM CategoryCredit Where name like :NM");
         query.setString("NM", "%" + name + "%");
