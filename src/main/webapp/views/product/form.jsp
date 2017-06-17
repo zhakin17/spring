@@ -37,6 +37,10 @@
 			</td>
 		</tr>
 		<tr>
+			<td>Image</td>
+			<td><form:input path="image" type="file"/></td>
+		</tr>
+		<tr>
 			<td></td>
 			<td><button type="submit">Save</button></td>
 		</tr>
