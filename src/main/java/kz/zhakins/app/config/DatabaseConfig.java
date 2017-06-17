@@ -2,10 +2,7 @@ package kz.zhakins.app.config;
 
 
 import  com.zaxxer.hikari.HikariDataSource;
-import kz.zhakins.app.model.CategoryCredit;
-import kz.zhakins.app.model.CategoryProduct;
-import kz.zhakins.app.model.Customer;
-import kz.zhakins.app.model.Product;
+import kz.zhakins.app.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -40,10 +37,10 @@ public class DatabaseConfig {
         dataSource.addDataSourceProperty("portNumber","3306");
         dataSource.addDataSourceProperty("serverName","localhost");
         dataSource.addDataSourceProperty("user","root");
-        dataSource.addDataSourceProperty("password","password");
+        //dataSource.addDataSourceProperty("password","password");
         dataSource.addDataSourceProperty("characterEncoding","utf8");
-        dataSource.addDataSourceProperty("useUnicode","true");
-        //dataSource.addDataSourceProperty("password","");
+        //dataSource.addDataSourceProperty("useUnicode","true");
+        dataSource.addDataSourceProperty("password","");
         return  dataSource;
     }
     @Bean
@@ -63,6 +60,7 @@ public class DatabaseConfig {
                 CategoryProduct.class,
                 CategoryCredit.class,
                 Product.class
+                , Orders.class
         );
 
         Properties properties = new Properties();
