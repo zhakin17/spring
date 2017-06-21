@@ -1,6 +1,8 @@
 package kz.zhakins.app.model;
 
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -28,9 +30,11 @@ public class Orders {
     @JoinColumn(name = "id_product")
     private Product product;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "date_of_delivery")
     private Date dateOfDelivery;
 
+    @DateTimeFormat(pattern = "yyy-MM-dd")
     @Column(name = "date_of_return")
     private Date dateOfReturn;
 

@@ -22,11 +22,11 @@ public class OrderService {
 
 
     @SuppressWarnings("unchecked")
-    public List<Orders> listAllOrders(String name) {
+    public List<Orders> listAllOrders() {
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("FROM Orders Where name like :NM");
-        query.setString("NM", "%" + name + "%");
-        return  null; //query.list();
+        Query query = session.createQuery("FROM Orders");
+        //query.setString("NM", "%" + name + "%");
+        return  query.list();
     }
 
     public void saveOrUpdate(Orders order) {

@@ -38,7 +38,7 @@ public class OrderController {
 
 
 
-        List<Orders> list = orderService.listAllOrders("");
+        List<Orders> list = orderService.listAllOrders();
         model.addObject("list", list);
 
         return model;
@@ -89,6 +89,7 @@ public class OrderController {
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public ModelAndView save(@ModelAttribute("order/form") Orders order) {
+
         ModelAndView model = new ModelAndView("order/form");
 
         orderService.saveOrUpdate(order);

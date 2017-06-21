@@ -13,12 +13,12 @@
 		<td>Comission</td>
 		<td colspan="2">Actiond </td>
 	</tr>
-	<c:forEach items="${list }" var="order">
+	<c:forEach items="${list}" var="order">
 		<tr>
 			<%--<td>${customer.id}</td>--%>
 
 			<td>${order.orderNumber}</td>
-			<td>${order.customer.firstname} ${order.customer.lastname}</td>
+			<td>${order.customer.firstname} </td>
 			<td>${order.product.name}</td>
 			<td>${order.dateOfDelivery}</td>
 			<td>${order.dateOfDelivery}</td>
